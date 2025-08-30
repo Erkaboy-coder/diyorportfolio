@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qadamboyev Diyorbek - Java Junior Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --primary-color:#0d6efd; --secondary-color:#f8f9fa; --dark-color:#2c3e50; --text-color:#444; }
+    body{font-family:'Roboto',sans-serif;background:linear-gradient(180deg,#f0f4ff,#fff);color:var(--text-color);}
+    .resume-container{max-width:1000px;margin:40px auto;background:#fff;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,0.08);overflow:hidden;}
+    .header-section{background:linear-gradient(135deg,var(--primary-color),#003366);color:#fff;text-align:center;padding:50px 25px;}
+    .header-section h1{font-weight:700;font-size:2.5rem;}
+    .header-section p{font-size:1.2rem;opacity:.9;}
+    .contact-info a{color:#fff;margin:0 10px;text-decoration:none;transition:.3s;}
+    .contact-info a:hover{color:#ffd700;transform:scale(1.05);}
+    .download-btn{margin-top:20px;border-radius:25px;font-weight:500;padding:8px 18px;}
+    .section-title{color:var(--dark-color);border-left:5px solid var(--primary-color);padding-left:14px;margin:40px 0 25px;font-weight:700;font-size:1.4rem;}
+    .skills-list{display:flex;flex-wrap:wrap;gap:10px;}
+    .skill-badge{background:#eef1f6;padding:8px 15px;border-radius:25px;font-size:.9rem;font-weight:500;transition:.25s;}
+    .skill-badge:hover{background:var(--primary-color);color:#fff;transform:translateY(-3px);}
+    .project-card{border:none;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.08);transition:.3s;}
+    .project-card:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(0,0,0,.15);}
+    .project-tech{font-size:.8rem;color:#666;font-style:italic;}
+    .mini-projects .card{background:#f9fbff;border:1px solid #e6e9f0;}
+    footer{text-align:center;padding:15px;background:#f1f5ff;font-size:.9rem;color:#555;}
+
+    /* PDF uchun sahifa bo'linishi toza chiqishi */
+    .section-break{break-before: page;}
+    @media print {
+      body{background:#fff;}
+      .download-btn{display:none;}
+      .resume-container{box-shadow:none;border-radius:0;margin:0;}
+    }
+  </style>
+</head>
+<body>
+
+<div id="resume-root" class="resume-container">
+  <!-- Header -->
+  <div class="header-section">
+    <h1>Qadamboyev Diyorbek</h1>
+    <p>Java Junior Developer</p>
+    <div class="contact-info">
+      <a href="mailto:diyorbekqadamboyev.0208@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="tel:+998930535203"><i class="fas fa-phone"></i> Telefon</a>
+      <a href="https://t.me/Diyorbek_5203" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://github.com/DiyanQadamboyev" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <button id="downloadPdf" class="btn btn-light btn-sm download-btn">
+      <i class="fas fa-download"></i> Resume PDF yuklab olish
+    </button>
+  </div>
+
+  <div class="p-4">
+    <!-- About -->
+    <h3 class="section-title">Men haqimda</h3>
+    <p>
+      Maqsadga yo‘naltirilgan va tez o‘rganadigan <b>Java Junior Developer</b>. 
+      <b>Java Core</b>, <b>OOP</b>, va <b>SOLID</b> prinsiplarini yaxshi bilaman. 
+      <b>Spring Boot</b>, <b>Spring Security</b> bilan amaliy tajriba orttirdim. 
+      <b>PostgreSQL</b> bilan ishlayman, <b>RESTful API</b> yarataman va <b>Git</b> orqali versiya nazoratini yuritaman. 
+      Jamoada ishlash va muammolarga ijodiy yechim topishga katta e’tibor qarataman.
+    </p>
+
+    <!-- Skills -->
+    <h3 class="section-title">Texnik ko‘nikmalar</h3>
+    <div class="skills-list">
+      <span class="skill-badge">Java Core</span>
+      <span class="skill-badge">Spring Boot</span>
+      <span class="skill-badge">Spring Security</span>
+      <span class="skill-badge">Hibernate</span>
+      <span class="skill-badge">PostgreSQL</span>
+      <span class="skill-badge">Docker</span>
+      <span class="skill-badge">Git</span>
+      <span class="skill-badge">REST API</span>
+      <span class="skill-badge">Microservices</span>
+      <span class="skill-badge">JWT / OAuth2</span>
+      <span class="skill-badge">AWS (S3)</span>
+      <span class="skill-badge">Swagger</span>
+      <span class="skill-badge">CI/CD</span>
+    </div>
+
+    <!-- Projects -->
+    <h3 class="section-title">Loyihalar</h3>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card project-card h-100">
+          <div class="card-body">
+            <h5 class="fw-bold"><i class="fas fa-hospital"></i> Hospital Admission Project</h5>
+            <p>Bemorlarni qabul qilish jarayonlarini avtomatlashtiruvchi tizim. <b>JWT</b> autentifikatsiya va <b>WebSocket</b> real-time aloqa qo‘llanilgan.</p>
+            <p class="project-tech">Java, Spring Boot, Spring Security, AWS S3, PostgreSQL</p>
+            <a href="https://github.com/DiyanQadamboyev/hospital_admission_project" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card project-card h-100">
+          <div class="card-body">
+            <h5 class="fw-bold"><i class="fas fa-cart-shopping"></i> E-Commerce Platformasi</h5>
+            <p>Mahsulotlarni sotish va boshqarish uchun onlayn-do‘kon. CRUD operatsiyalari va autentifikatsiya qo‘shilgan.</p>
+            <p class="project-tech">Spring Boot, PostgreSQL, API</p>
+            <a href="#" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Projects -->
+    <h3 class="section-title">Kichik loyihalar</h3>
+    <div class="row g-3 mini-projects">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="fw-bold"><i class="fas fa-utensils"></i> Food Ordering Bot</h6>
+            <p>Ovqat buyurtma qilish uchun bot (CRUD operatsiyalar).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="fw-bold"><i class="fas fa-code"></i> JsonBot</h6>
+            <p>JSON formatidagi ma’lumotlar bilan ishlaydigan bot (CRUD amallar).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="fw-bold"><i class="fas fa-graduation-cap"></i> StudyCenterApp</h6>
+            <p>O‘quv markazi uchun to‘lov holatlarini boshqaruvchi dastur (Java + PostgreSQL).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <h3 class="section-title">Ta'lim</h3>
+    <ul>
+      <li><b>Toshkent davlat texnika universiteti</b> – Iqtisodiyot (2021–2025)</li>
+      <li><b>PDP Academy</b> – Foundation (2 oy), Java Core (6 oy), Java Backend (4 oy)</li>
+    </ul>
+
+    <!-- Languages -->
+    <h3 class="section-title">Tillar</h3>
+    <ul>
+      <li>O‘zbek: Ona tili</li>
+      <li>Ingliz: B1</li>
+      <li>Rus: A2</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Qadamboyev Diyorbek. Barcha huquqlar himoyalangan.</p>
+  </footer>
+</div>
+
+<!-- JS: html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  // PDF yuklab olish
+  document.getElementById('downloadPdf').addEventListener('click', function () {
+    const element = document.getElementById('resume-root');
+
+    const opt = {
+      margin:       0.5,                          // dyuym
+      filename:     'Qadamboyev_Diyorbek_Resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' },
+      pagebreak:    { mode: ['css', 'legacy'] }   // .section-break kabi klasslar ishlaydi
+    };
+
+    html2pdf().set(opt).from(element).save();
+  });
+</script>
+</body>
+</html>
