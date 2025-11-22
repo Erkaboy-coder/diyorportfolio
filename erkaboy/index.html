@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Erkaboy Qadamboyev — Mid‑Level Backend Developer (Django, DRF, Celery, Docker, AWS)" />
+  <title>Erkaboy Qadamboyev — Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+<style>
+  :root {
+    --ek-primary: #2563eb;
+    --ek-primary-2: #4f46e5;
+    --ek-dark: #1e293b;
+    --ek-muted: #64748b;
+    --ek-bg: #f9fafb;
+    --ek-card: #ffffff;
+    --ek-border: rgba(0,0,0,.1);
+    --ek-chip: rgba(37,99,235,.08);
+  }
+
+  html{scroll-behavior:smooth}
+  body{
+    background: var(--ek-bg);
+    color:var(--ek-dark);
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* Navbar */
+  .navbar {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg,var(--ek-primary),var(--ek-primary-2)) !important;
+  }
+  .navbar .navbar-brand {
+    font-weight: 700;
+    color:#fff;
+  }
+  .navbar .nav-link{color:#f1f5f9; font-weight:500; transition:.3s;}
+  .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff; transform:translateY(-1px);}
+
+  /* Hero */
+  .hero {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    background: radial-gradient(circle at top left, rgba(79,70,229,.08), transparent),
+                radial-gradient(circle at bottom right, rgba(37,99,235,.08), transparent);
+  }
+  .hero h1{font-weight:800; letter-spacing:.3px; color:#0f172a;}
+  .hero-sub{color:var(--ek-muted)}
+  .glow{
+    background: linear-gradient(90deg,var(--ek-primary),var(--ek-primary-2));
+    -webkit-background-clip: text; background-clip:text; color:transparent;
+  }
+
+  /* Cards */
+  .card-ek{
+    background: var(--ek-card);
+    border: 1px solid var(--ek-border);
+    border-radius: 18px;
+    color:var(--ek-dark);
+    transition: all .3s ease;
+  }
+  .card-ek:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+  }
+
+  /* Chips */
+  .chip{
+    display:inline-block; padding:.35rem .6rem; border-radius:999px;
+    font-size:.8rem; color:var(--ek-primary);
+    background:var(--ek-chip);
+    border:1px solid rgba(37,99,235,.15);
+    margin:.15rem .25rem 0 0;
+    transition:.2s;
+  }
+  .chip:hover{background:rgba(37,99,235,.15);}
+
+  /* Section Titles */
+  .section-title{font-weight:800; letter-spacing:.2px; color:#0f172a;}
+  .section-sub{color:var(--ek-muted)}
+
+  /* Timeline */
+  .timeline{position:relative; margin-left: .5rem}
+  .timeline::before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(var(--ek-primary), transparent)}
+  .t-item{position:relative; padding-left:2.5rem; margin-bottom:1.25rem; color:#1e293b}
+  .t-item::before{content:""; position:absolute; left:3px; top:.2rem; width:16px; height:16px; border-radius:50%; background:linear-gradient(180deg,var(--ek-primary),var(--ek-primary-2)); box-shadow:0 0 0 4px rgba(37,99,235,.1)}
+
+  /* Skill Badges */
+  .skill-badges .badge{
+    background: rgba(37,99,235,.06);
+    border:1px solid var(--ek-border);
+    color:var(--ek-dark);
+    margin:.25rem; font-weight:500; transition:.2s;
+  }
+  .skill-badges .badge:hover{background:rgba(37,99,235,.1);}
+
+  /* Portfolio Images */
+  .project-image{
+    aspect-ratio: 16/10; object-fit:cover;
+    border-radius:12px; border:1px solid var(--ek-border);
+    transition: all .3s ease;
+  }
+  .project-card:hover .project-image{transform:scale(1.03);}
+  .project-card a.btn{border-radius:12px}
+
+  /* Footer */
+  .footer{
+    border-top:1px solid var(--ek-border);
+    background:linear-gradient(90deg,var(--ek-primary),var(--ek-primary-2));
+    color:#fff;
+  }
+  .footer a{color:#e0e7ff}
+  .footer a:hover{color:#fff; text-decoration:underline}
+
+  .contact-list i{width:1.2rem; color:var(--ek-primary)}
+
+  .btn-outline-light {
+    border-color: var(--ek-primary);
+    color: var(--ek-primary);
+  }
+  .btn-outline-light:hover {
+    background: var(--ek-primary);
+    color: #fff;
+  }
+
+  .divider{height:1px; background:var(--ek-border)}
+</style>
+
+
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="#home">Erkaboy</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="display-5 mb-3">Qadamboyev <span class="glow">Erkaboy</span></h1>
+          <p class="lead hero-sub mb-4">Mid‑Level Backend Developer • Python (Django/DRF, Celery) • Docker • AWS • CI/CD</p>
+          <div class="d-flex gap-3">
+            <a href="#portfolio" class="btn btn-primary btn-lg">View Projects</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card-ek p-4 h-100">
+            <h2 class="h5 text-uppercase text-white-50 mb-3">About Me</h2>
+            <p class="mb-0">Hi, I’m a Mid‑Level Backend Developer with over 4 years of hands‑on experience in designing, developing, and deploying robust web solutions. I focus on REST APIs, DevOps practices (Docker, CI/CD), and performance optimization using tools like Celery and Redis. I love building scalable, secure, and maintainable applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT / CONTACT QUICK -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card-ek p-4 h-100">
+            <h3 class="section-title mb-3">Location</h3>
+            <p class="section-sub mb-4">Uzbekistan, Tashkent</p>
+            <div class="divider mb-4"></div>
+            <h3 class="section-title mb-3">About Me</h3>
+            <p class="mb-0">Throughout my career, I’ve successfully contributed to over 10 real‑world projects — from large‑scale enterprise systems with hundreds of users to efficient Telegram bots and data management platforms. I’m a proactive problem‑solver and a quick learner, eager to embrace new challenges and technologies.</p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card-ek p-4 h-100">
+            <h3 class="section-title mb-3">Contact</h3>
+            <ul class="list-unstyled contact-list mb-4">
+              <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> <a class="text-decoration-none" href="tel:+998995412101">+998‑99‑541‑21‑01</a></li>
+              <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i> <a class="text-decoration-none" href="mailto:erkaboy756.5676@gmail.com">erkaboy756.5676@gmail.com</a></li>
+              <li class="mb-2"><i class="fa-brands fa-telegram me-2"></i> <a class="text-decoration-none" href="https://t.me/QadamboyevErkaboy" target="_blank">t.me/QadamboyevErkaboy</a></li>
+              <li class="mb-2"><i class="fa-brands fa-linkedin me-2"></i> <a class="text-decoration-none" href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+              <li><i class="fa-brands fa-github me-2"></i> <a class="text-decoration-none" href="https://github.com/" target="_blank">GitHub</a> • <a class="text-decoration-none" href="https://gitlab.com/" target="_blank">GitLab</a></li>
+            </ul>
+            <a class="btn btn-outline-light" href="#portfolio"><i class="fa-solid fa-briefcase me-2"></i>See Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h3 class="section-title mb-3">Skills</h3>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card-ek p-4 h-100">
+            <h4 class="h6 text-white-50 text-uppercase">Backend & Tools</h4>
+            <div class="mt-2 skill-badges">
+              <span class="badge">Python (Django, DRF, Celery)</span>
+              <span class="badge">PHP (Laravel)</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">MySQL</span>
+              <span class="badge">Redis</span>
+              <span class="badge">API Design (REST, JWT)</span>
+              <span class="badge">ORM (Django ORM, Eloquent)</span>
+              <span class="badge">Pytest</span>
+              <span class="badge">RabbitMQ</span>
+              <span class="badge">Kafka</span>
+              <span class="badge">Git (GitHub, GitLab)</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-ek p-4 h-100">
+            <h4 class="h6 text-white-50 text-uppercase">Frontend</h4>
+            <div class="mt-2 skill-badges">
+              <span class="badge">HTML5</span>
+              <span class="badge">CSS3</span>
+              <span class="badge">Bootstrap</span>
+              <span class="badge">Tailwind CSS</span>
+              <span class="badge">JavaScript (ES6+)</span>
+              <span class="badge">React.js</span>
+              <span class="badge">Next.js</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-ek p-4 h-100">
+            <h4 class="h6 text-white-50 text-uppercase">DevOps & Architecture</h4>
+            <div class="mt-2 skill-badges">
+              <span class="badge">Docker / Docker Compose</span>
+              <span class="badge">CI/CD (GitHub Actions, GitLab CI)</span>
+              <span class="badge">AWS (EC2, S3)</span>
+              <span class="badge">Nginx / Gunicorn</span>
+              <span class="badge">System Design</span>
+              <span class="badge">Scalability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-5">
+    <div class="container">
+      <h3 class="section-title mb-3">Experience</h3>
+      <div class="card-ek p-4">
+        <div class="timeline">
+          <div class="t-item">
+            <h5 class="mb-1">“UzGASHKLITI” LLC — First degree Engineer programmer (Remote)</h5>
+            <div class="text-white-50 mb-2">07.01.2021 — 01.31.2024</div>
+          </div>
+          <div class="t-item">
+            <h5 class="mb-1">“JAPAN DIGITAL UNIVERSITY” LLC — Engineer programmer & Teacher</h5>
+            <div class="text-white-50">02.01.2024 — Present</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-5">
+    <div class="container">
+      <h3 class="section-title mb-3">Education</h3>
+      <div class="card-ek p-4">
+        <div class="timeline">
+          <div class="t-item">
+            <h6 class="mb-1">Khorezm region, Khazorasp (School #8)</h6>
+            <div class="text-white-50">2004 — 2013</div>
+          </div>
+          <div class="t-item">
+            <h6 class="mb-1">Khorezm region, Khazorasp — URDU Lyceum</h6>
+            <div class="text-white-50">2013 — 2016</div>
+          </div>
+          <div class="t-item">
+            <h6 class="mb-1">Tashkent University of Information Technologies — Bachelor</h6>
+            <div class="text-white-50">2016 — 2021</div>
+          </div>
+          <div class="t-item">
+            <h6 class="mb-1">INHA University in South Korea — Exchange student</h6>
+            <div class="text-white-50">2019 — 2020</div>
+          </div>
+          <div class="t-item">
+            <h6 class="mb-1">Tashkent University of Information Technologies — Master</h6>
+            <div class="text-white-50">2021 — 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="py-5">
+    <div class="container">
+      <h3 class="section-title mb-1">Portfolio</h3>
+      <p class="section-sub mb-4">Selected projects and achievements.</p>
+
+      <div class="row g-4">
+        <!-- Uzgashkliti Certificate Management -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/certi/2.png" alt="Uzgashkliti Certificate Management" />
+            <h5>Uzgashkliti Certificate Management <span class="badge bg-primary ms-1">Ongoing</span></h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#PostgreSQL</span><span class="chip">#Bootstrap 5</span><span class="chip">#Transactions</span><span class="chip">#DevOps</span>
+            </div>
+            <p class="mb-3">Digitizes and automates certificate workflows with multi‑role approval, PDF (QR) generation, and employee management.</p>
+            <div class="d-flex gap-2">
+              <a href="https://certificate.uzgashkliti.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monitoring DSHK -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/monitoring/2.png" alt="Monitoring DSHK" />
+            <h5>Monitoring DSHK <span class="badge bg-primary ms-1">Ongoing</span></h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#REST API</span><span class="chip">#JWT</span><span class="chip">#PostgreSQL</span><span class="chip">#PostGIS</span><span class="chip">#Celery</span><span class="chip">#Nginx</span><span class="chip">#Gunicorn</span><span class="chip">#Redis</span><span class="chip">#Docker</span>
+            </div>
+            <p class="mb-3">Comprehensive platform for 12 branches & 388 workers with automated task distribution, 1C payroll integration, and analytics.</p>
+            <div class="d-flex gap-2">
+              <a href="https://monitoring.dshk.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- data.jdu.uz -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/jdu/2.png" alt="Student Management Platform" />
+            <h5>Student Management Platform (data.jdu.uz) <span class="badge bg-primary ms-1">Ongoing</span></h5>
+            <div class="mb-2">
+              <span class="chip">#Laravel</span><span class="chip">#PHP</span><span class="chip">#MySQL</span><span class="chip">#AJAX</span><span class="chip">#PlayMobile API</span><span class="chip">#Cron Jobs</span>
+            </div>
+            <p class="mb-3">Secure web app for staff, students, and parents (600+ users) — imports, filtering, SMS notifications, and daily cron updates.</p>
+            <div class="d-flex gap-2">
+              <a href="https://data.jdu.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Magic Land -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/magicland/1.jpg" alt="Magic Land" />
+            <h5>Magic Land (Children's Time Management)</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#WebSockets</span><span class="chip">#AJAX</span><span class="chip">#Bootstrap 5</span><span class="chip">#PostgreSQL</span><span class="chip">#Redis</span>
+            </div>
+            <p class="mb-3">Real‑time registration & time tracking with Django Channels and monthly stats for payments.</p>
+            <div class="d-flex gap-2">
+              <a href="https://erkaboycoder.pythonanywhere.com" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Sender Bot for Monitoring DSHK -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/message_sender_monitoring/bot_working.png" alt="Message Sender Bot" />
+            <h5>Message Sender Bot for Monitoring DSHK</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#Python</span><span class="chip">#aiogram</span><span class="chip">#PostgreSQL</span><span class="chip">#Gunicorn</span>
+            </div>
+            <p class="mb-3">Automated Telegram messages to 388+ employees about submission statuses for timely communication.</p>
+            <div class="d-flex gap-2">
+              <a href="https://t.me" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auto Test Platform -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/avto/1.png" alt="Auto Test Platform" />
+            <h5>Auto Test Platform</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#REST API</span><span class="chip">#JWT</span><span class="chip">#PostgreSQL</span><span class="chip">#Nginx</span><span class="chip">#Gunicorn</span>
+            </div>
+            <p class="mb-3">Driver testing and secure certificate issuance platform focusing on API development and reliable deployment.</p>
+            <div class="d-flex gap-2">
+              <span class="text-white-50">Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DSHK Geoportal Application Feature -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/dshk/1.png" alt="DSHK Geoportal Application Feature" />
+            <h5>DSHK Geoportal Application Feature</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#Bootstrap 5</span><span class="chip">#jQuery</span><span class="chip">#AJAX</span><span class="chip">#PostgreSQL</span>
+            </div>
+            <p class="mb-3">Submission module for data uploads, user profiles, email verification, and permissions — workflow improved by 20%.</p>
+            <div class="d-flex gap-2">
+              <a href="https://dshk.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate Generator with QR -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/qr/1.png" alt="Certificate Generator with QR" />
+            <h5>Certificate Generator with QR</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#Bootstrap 5</span><span class="chip">#jQuery</span><span class="chip">#AJAX</span><span class="chip">#PostgreSQL</span><span class="chip">#QR Code</span>
+            </div>
+            <p class="mb-3">Secure certificate generator with QR verification and monthly unique ID logic to prevent repetition.</p>
+            <div class="d-flex gap-2">
+              <a href="https://certificate.dshk.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Bot for JDU -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/register_bot/1.png" alt="Registration Bot for JDU" />
+            <h5>Registration Bot for JAPAN DIGITAL UNIVERSITY</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#Python</span><span class="chip">#aiogram</span><span class="chip">#PostgreSQL</span><span class="chip">#Excel Export</span>
+            </div>
+            <p class="mb-3">Automated login/password generation and Excel export for math competition registrations.</p>
+            <div class="d-flex gap-2">
+              <span class="text-white-50">Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appliances Certificates Registration -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/pribor/1.png" alt="Appliances Certificates Registration" />
+            <h5>Appliances Certificates Registration</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#Bootstrap 5</span><span class="chip">#jQuery</span><span class="chip">#AJAX</span><span class="chip">#PostgreSQL</span>
+            </div>
+            <p class="mb-3">Register & manage appliances with search, expiry tracking, and updates to improve compliance.</p>
+            <div class="d-flex gap-2">
+              <span class="text-white-50">Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Uzbek Speech Corpus and ASR -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/spai/1.png" alt="Uzbek Speech Corpus and ASR" />
+            <h5>Uzbek Speech Corpus and ASR</h5>
+            <div class="mb-2">
+              <span class="chip">#Django</span><span class="chip">#Bootstrap 5</span><span class="chip">#jQuery</span><span class="chip">#AJAX</span><span class="chip">#PostgreSQL</span>
+            </div>
+            <p class="mb-3">Audio data collection platform for Uzbek ASR: random word generation and voice recording.</p>
+            <div class="d-flex gap-2">
+              <a href="https://usc.spai.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Football Club Metallurg Website -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/footboll/1.png" alt="Football Club Metallurg Website" />
+            <h5>Football Club Metallurg Website</h5>
+            <div class="mb-2">
+              <span class="chip">#Laravel</span><span class="chip">#Bootstrap 4</span><span class="chip">#MySQL</span>
+            </div>
+            <p class="mb-3">Dynamic website with real‑time results, league tables, and admin panels for news & media.</p>
+            <div class="d-flex gap-2">
+              <a href="https://fcmetallurg.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rajabiy Home Museum Website -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-ek p-3 h-100 project-card">
+            <img class="img-fluid project-image mb-3" src="img/rajabiy/1.png" alt="Rajabiy Home Museum Website" />
+            <h5>Rajabiy Home Museum Website</h5>
+            <div class="mb-2">
+              <span class="chip">#Laravel</span><span class="chip">#Bootstrap 4</span><span class="chip">#MySQL</span>
+            </div>
+            <p class="mb-3">Content‑rich site for museum news, music, videos, photos, and information with admin CMS.</p>
+            <div class="d-flex gap-2">
+              <a href="https://rajabiymuzeyi.uz" target="_blank" class="btn btn-outline-light">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a class="btn btn-primary btn-lg" href="#contact"><i class="fa-solid fa-download me-2"></i>Request CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card-ek p-4 h-100">
+            <h3 class="section-title mb-3">Let’s work together</h3>
+            <p class="section-sub">Have a project in mind or want to say hi? Drop a message — I usually reply within a day.</p>
+            <ul class="list-unstyled contact-list">
+              <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i> Uzbekistan, Tashkent</li>
+              <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> <a class="text-decoration-none" href="tel:+998995412101">+998‑99‑541‑21‑01</a></li>
+              <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i> <a class="text-decoration-none" href="mailto:erkaboy756.5676@gmail.com">erkaboy756.5676@gmail.com</a></li>
+              <li class="mb-2"><i class="fa-brands fa-telegram me-2"></i> <a class="text-decoration-none" href="https://t.me/QadamboyevErkaboy" target="_blank">t.me/QadamboyevErkaboy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card-ek p-4 h-100">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input class="form-control" id="name" required />
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required />
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="4" required></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+                <div class="col-12 d-flex align-items-center gap-3">
+                  <button class="btn btn-primary" type="submit">Send Message</button>
+                  <span id="formStatus" class="text-success small"></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer py-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div>© <span id="year"></span> Erkaboy Qadamboyev. All rights reserved.</div>
+      <div class="d-flex gap-3">
+        <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://t.me/QadamboyevErkaboy" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth active link highlight on scroll
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const setActive = () => {
+      let index = sections.length;
+      while(--index && window.scrollY + 120 < sections[index].offsetTop){}
+      navLinks.forEach(l => l.classList.remove('active'));
+      const id = sections[index]?.id;
+      const active = document.querySelector(`.nav-link[href="#${id}"]`);
+      if(active) active.classList.add('active');
+    };
+    setActive();
+    window.addEventListener('scroll', setActive);
+
+    // contact form validation + fake submit
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if(!form.checkValidity()){
+        e.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending…';
+      setTimeout(() => { status.textContent = 'Thank you! I will get back to you soon.'; form.reset(); form.classList.remove('was-validated'); }, 1200);
+    });
+  </script>
+</body>
+</html>

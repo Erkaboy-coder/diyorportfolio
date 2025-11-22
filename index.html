@@ -3,184 +3,336 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qadamboyev Diyorbek - Java Junior Developer</title>
+  <title>Qadamboyev Diyorbek - Java Backend Developer</title>
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    :root { --primary-color:#0d6efd; --secondary-color:#f8f9fa; --dark-color:#2c3e50; --text-color:#444; }
-    body{font-family:'Roboto',sans-serif;background:linear-gradient(180deg,#f0f4ff,#fff);color:var(--text-color);}
-    .resume-container{max-width:1000px;margin:40px auto;background:#fff;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,0.08);overflow:hidden;}
-    .header-section{background:linear-gradient(135deg,var(--primary-color),#003366);color:#fff;text-align:center;padding:50px 25px;}
-    .header-section h1{font-weight:700;font-size:2.5rem;}
-    .header-section p{font-size:1.2rem;opacity:.9;}
-    .contact-info a{color:#fff;margin:0 10px;text-decoration:none;transition:.3s;}
-    .contact-info a:hover{color:#ffd700;transform:scale(1.05);}
-    .download-btn{margin-top:20px;border-radius:25px;font-weight:500;padding:8px 18px;}
-    .section-title{color:var(--dark-color);border-left:5px solid var(--primary-color);padding-left:14px;margin:40px 0 25px;font-weight:700;font-size:1.4rem;}
-    .skills-list{display:flex;flex-wrap:wrap;gap:10px;}
-    .skill-badge{background:#eef1f6;padding:8px 15px;border-radius:25px;font-size:.9rem;font-weight:500;transition:.25s;}
-    .skill-badge:hover{background:var(--primary-color);color:#fff;transform:translateY(-3px);}
-    .project-card{border:none;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.08);transition:.3s;}
-    .project-card:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(0,0,0,.15);}
-    .project-tech{font-size:.8rem;color:#666;font-style:italic;}
-    .mini-projects .card{background:#f9fbff;border:1px solid #e6e9f0;}
-    footer{text-align:center;padding:15px;background:#f1f5ff;font-size:.9rem;color:#555;}
+    :root {
+      --primary:#0d6efd;
+      --dark:#1d3557;
+      --text:#444;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #eef3ff;
+      padding: 25px 0;
+      color: var(--text);
+    }
 
-    /* PDF uchun sahifa bo'linishi toza chiqishi */
-    .section-break{break-before: page;}
-    @media print {
-      body{background:#fff;}
-      .download-btn{display:none;}
-      .resume-container{box-shadow:none;border-radius:0;margin:0;}
+    .resume-container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      color: #fff;
+      text-align: center;
+      padding: 55px 30px;
+    }
+    .header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
+    .contact a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: .3s;
+    }
+    .contact a:hover {
+      color: #ffeb99;
+    }
+    #downloadBtn {
+      margin-top: 20px;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 35px;
+      background: #fff;
+      color: var(--dark);
+      font-weight: 600;
+      transition: .3s;
+    }
+    #downloadBtn:hover {
+      background: #ffeb99;
+      color: #000;
+    }
+
+    /* TITLES */
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 25px;
+      border-left: 6px solid var(--primary);
+      padding-left: 15px;
+      color: var(--dark);
+    }
+
+    /* SKILLS */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-badge {
+      background: #eef3ff;
+      padding: 8px 15px;
+      border-radius: 22px;
+      font-size: .92rem;
+      font-weight: 500;
+      transition: .3s;
+    }
+    .skill-badge:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .card-custom {
+      background: #f9fbff;
+      border: 1px solid #e4e8f5;
+      border-radius: 15px;
+      padding: 20px;
+      transition: .3s;
+    }
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f4f6ff;
+      color: #555;
     }
   </style>
 </head>
+
 <body>
 
-<div id="resume-root" class="resume-container">
-  <!-- Header -->
-  <div class="header-section">
+<div id="resume" class="resume-container">
+
+  <!-- HEADER -->
+  <div class="header">
     <h1>Qadamboyev Diyorbek</h1>
-    <p>Java Junior Developer</p>
-    <div class="contact-info">
-      <a href="mailto:diyorbekqadamboyev.0208@gmail.com"><i class="fas fa-envelope"></i> Email diyorbekqadamboyev.0208@gmail.com</a>
-      <a href="tel:+998930535203"><i class="fas fa-phone"></i> +998930535203</a>
-      <a href="https://t.me/Diyorbek_5203" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="https://github.com/DiyanQadamboyev" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <p>Java Backend Developer</p>
+
+    <div class="contact mt-3">
+      <a href="mailto:diyorbekqadamboyev.0208@gmail.com"><i class="fa fa-envelope"></i> Email</a>
+      <a href="tel:+998930535203"><i class="fa fa-phone"></i> +998 93 053 52 03</a>
+      <a href="https://t.me/Diyorbek_5203"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://github.com/DiyanQadamboyev"><i class="fab fa-github"></i> GitHub</a>
     </div>
-    <button id="downloadPdf" class="btn btn-light btn-sm download-btn">
-      <i class="fas fa-download"></i> Resume PDF yuklab olish
-    </button>
+
+    <button id="downloadBtn"><i class="fa fa-download"></i> PDF yuklab olish</button>
   </div>
 
+
   <div class="p-4">
-    <!-- About -->
+
+    <!-- ABOUT -->
     <h3 class="section-title">Men haqimda</h3>
     <p>
-      Men <b>Java Junior Developer</b> sifatida dasturlashni faol o‘rganib, amaliyotda qo‘llashga harakat qilaman. 
-      <b>Java Core</b>, <b>OOP</b> va <b>SOLID</b> prinsiplari bo‘yicha asosiy bilimlarga egaman. 
-      <b>Spring Boot</b> va <b>Spring Security</b> bilan kichik loyihalarda ishlaganman. 
-      <b>PostgreSQL</b> ma’lumotlar bazasi va <b>RESTful API</b> yaratish bo‘yicha tajribam bor. 
-      <b>Git</b> orqali kodni boshqarishni o‘rganib, jamoada ishlash ko‘nikmalarini rivojlantirmoqdaman.  
-      Yangi texnologiyalarni tez o‘rganishga qiziqaman va o‘z bilimlarimni amaliy loyihalarda kengaytirishga tayyorman.
+      Men Java Junior Developer sifatida dasturlashni faol o‘rganib, amaliy loyihalarda o‘rgangan bilimlarimni qo‘llashga intilaman. 
+      <b>Java Core</b>, <b>OOP</b> va <b>SOLID</b> prinsiplari bo‘yicha mustahkam asosga egaman va kod sifati, modul tuzilmalari 
+      hamda toza arxitektura men uchun muhim.
+    </p>
+    <p>
+      <b>Spring Boot</b> va <b>Spring Security</b> yordamida autentifikatsiya, avtorizatsiya, modul servislar va RESTful API larni yaratganman. 
+      <b>PostgreSQL</b> bilan samarali ishlayman, ma’lumotlar bazasi modeling, query optimizatsiyasi va real loyihalarda ma’lumot oqimini tashkil qilish bo‘yicha tajribam bor.
+    </p>
+    <p>
+      <b>Git</b> va <b>GitLab</b> orqali jamoaviy ishlash jarayonlari, merge requestlar, branch strategiyasi va CI/CD pipeline asoslarini chuqur o‘rgandim. 
+      Loyiha davomida <b>Exception Handling</b>, logging, validatsiya va backendning barqaror ishlashini ta’minlashga katta e’tibor beraman.
+    </p>
+    <p>
+      Yangi texnologiyalarni o‘rganishdan zavqlanaman va real loyihalarda sifatli backend yechimlar yaratishga intilaman.
     </p>
 
 
-    <!-- Skills -->
+
+    <!-- EXPERIENCE -->
+    <h3 class="section-title">Tajriba</h3>
+
+    <div class="card-custom mb-4">
+      <h5><i class="fa fa-building"></i> TenzorSoft IT Company</h5>
+      <p><strong>Backend Developer — Real Project Experience (1 oy)</strong></p>
+
+      <ul style="line-height: 1.7;">
+
+        <li>
+          <strong>“U-GAZ” tizimi:</strong> metan zapravkalar uchun avtomatlashtirilgan platformaning backend qismida 
+          funksional modullar ishlab chiqdim, API endpointlar yaratdim, servislar o‘rtasidagi ma’lumot almashinuvi logikasini yozdim va testdan o‘tkazdim.
+        </li>
+
+        <li>
+          <strong>WebSocket real-time:</strong> real vaqt rejimida ishlaydigan ma’lumot uzatish mexanizmlarini yaratdim, backend eventlarini qayta ishlash va ularni mijoz interfeysiga uzatish jarayonlarini implementatsiya qildim.
+        </li>
+
+        <li>
+          <strong>GitLab jamoaviy ishlab chiqish:</strong> branch boshqaruvi, merge requestlar, code review, repository strukturalari va CI/CD pipeline lar bilan ishladim.
+        </li>
+
+        <li>
+          <strong>“Navoiy Azot” uchun ichki tizim:</strong> korxonaning avtomatlashtirilgan platformasi uchun backend servislarini yaratdim va ustida ishladim.
+        </li>
+
+        <li>
+          <strong>Exception Handling:</strong> xatoliklarni boshqarish, validatsiya, logging va backend barqarorligi bo‘yicha amaliy tajriba orttirdim.
+        </li>
+
+      </ul>
+    </div>
+
+
+    <!-- SKILLS -->
     <h3 class="section-title">Texnik ko‘nikmalar</h3>
+
     <div class="skills-list">
       <span class="skill-badge">Java Core</span>
+      <span class="skill-badge">OOP / SOLID</span>
+
       <span class="skill-badge">Spring Boot</span>
       <span class="skill-badge">Spring Security</span>
-      <span class="skill-badge">Hibernate</span>
+      <span class="skill-badge">Hibernate / JPA</span>
+
       <span class="skill-badge">PostgreSQL</span>
-      <span class="skill-badge">Docker</span>
-      <span class="skill-badge">Git</span>
+      <span class="skill-badge">SQL Optimization</span>
+
       <span class="skill-badge">REST API</span>
+      <span class="skill-badge">Swagger / OpenAPI</span>
+
+      <span class="skill-badge">WebSocket</span>
+      <span class="skill-badge">Exception Handling</span>
+
+      <span class="skill-badge">Git</span>
+      <span class="skill-badge">GitLab (CI/CD)</span>
+
+      <span class="skill-badge">Docker</span>
+
+      <span class="skill-badge">JWT</span>
+      <span class="skill-badge">OAuth2</span>
+
       <span class="skill-badge">Microservices</span>
-      <span class="skill-badge">JWT / OAuth2</span>
-      <span class="skill-badge">AWS (S3)</span>
-      <span class="skill-badge">Swagger</span>
-      <span class="skill-badge">CI/CD</span>
+      <span class="skill-badge">Clean Architecture</span>
     </div>
 
-    <!-- Projects -->
+
+    <!-- PROJECTS -->
     <h3 class="section-title">Loyihalar</h3>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="fw-bold"><i class="fas fa-hospital"></i> Hospital Admission Project</h5>
-            <p>Bemorlarni qabul qilish jarayonlarini avtomatlashtiruvchi tizim. <b>JWT</b> autentifikatsiya va <b>WebSocket</b> real-time aloqa qo‘llanilgan.</p>
-            <p class="project-tech">Java, Spring Boot, Spring Security, AWS S3, PostgreSQL</p>
-            <a href="https://github.com/DiyanQadamboyev/hospital_admission_project" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-6">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="fw-bold"><i class="fas fa-cart-shopping"></i> E-Commerce Platformasi</h5>
-            <p>Mahsulotlarni sotish va boshqarish uchun onlayn-do‘kon. CRUD operatsiyalari va autentifikatsiya qo‘shilgan.</p>
-            <p class="project-tech">Spring Boot, PostgreSQL, API</p>
-            <a href="#" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
-          </div>
-        </div>
-      </div>
+
+    <div class="card-custom mb-3">
+      <h5><i class="fa fa-hospital"></i> Hospital Admission System</h5>
+      <p>Bemorlarni qabul qilish jarayonini avtomatlashtiruvchi backend tizimi.</p>
+      <ul>
+        <li>JWT orqali xavfsiz autentifikatsiya</li>
+        <li>WebSocket orqali real-time xabarnoma</li>
+      </ul>
+      <p><b>Texnologiyalar:</b> Spring Boot, Spring Security, PostgreSQL, AWS S3</p>
+      <a href="https://github.com/DiyanQadamboyev/hospital_admission_project" class="btn btn-outline-primary btn-sm" target="_blank">GitHub</a>
     </div>
 
-    <!-- Mini Projects -->
+    <div class="card-custom mb-4">
+      <h5><i class="fa fa-cart-shopping"></i> E-Commerce Backend</h5>
+      <p>Mahsulot, buyurtma va foydalanuvchilar boshqaruvi uchun API.</p>
+      <p><b>Texnologiyalar:</b> Spring Boot, PostgreSQL, REST API</p>
+      <a href="#" class="btn btn-outline-primary btn-sm">GitHub</a>
+    </div>
+
+
+    <!-- MINI PROJECTS -->
     <h3 class="section-title">Kichik loyihalar</h3>
-    <div class="row g-3 mini-projects">
+
+    <div class="row g-4 mini-projects">
+
       <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="fw-bold"><i class="fas fa-utensils"></i> Food Ordering Bot</h6>
-            <p>Ovqat buyurtma qilish uchun bot (CRUD operatsiyalar).</p>
-          </div>
+        <div class="card-custom h-100">
+          <h6 class="fw-bold"><i class="fas fa-utensils"></i> Food Ordering Bot</h6>
+          <p>
+            Ovqat buyurtmalarini avtomatlashtirish uchun yaratilgan bot. CRUD amallari, menyu boshqaruvi va buyurtmalarni qayta ishlash funksiyalari mavjud.
+          </p>
+          <p class="text-muted"><b>Texnologiyalar:</b> Java, PostgreSQL</p>
         </div>
       </div>
+
       <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="fw-bold"><i class="fas fa-code"></i> JsonBot</h6>
-            <p>JSON formatidagi ma’lumotlar bilan ishlaydigan bot (CRUD amallar).</p>
-          </div>
+        <div class="card-custom h-100">
+          <h6 class="fw-bold"><i class="fas fa-code"></i> JsonBot</h6>
+          <p>
+            JSON formatidagi ma’lumotlar bilan ishlaydigan bot. Yaratish, o‘qish, yangilash va o‘chirib tashlash funksiyalari mavjud.
+          </p>
+          <p class="text-muted"><b>Texnologiyalar:</b> Java, JSON Processing</p>
         </div>
       </div>
+
       <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h6 class="fw-bold"><i class="fas fa-graduation-cap"></i> StudyCenterApp</h6>
-            <p>O‘quv markazi uchun to‘lov holatlarini boshqaruvchi dastur (Java + PostgreSQL).</p>
-          </div>
+        <div class="card-custom h-100">
+          <h6 class="fw-bold"><i class="fas fa-graduation-cap"></i> StudyCenterApp</h6>
+          <p>
+            O‘quv markazi uchun to‘lovlarni boshqarish tizimi. Balans, to‘lov tarixi va o‘quvchilarni boshqarish funksiyalari mavjud.
+          </p>
+          <p class="text-muted"><b>Texnologiyalar:</b> Java, PostgreSQL</p>
         </div>
       </div>
+
     </div>
 
-    <!-- Education -->
+
+    <!-- EDUCATION -->
     <h3 class="section-title">Ta'lim</h3>
     <ul>
-      <li><b>Toshkent davlat texnika universiteti</b> – Iqtisodiyot (2021–2025)</li>
-      <li><b>PDP Academy</b> – Foundation (2 oy), Java Core (6 oy), Java Backend (4 oy)</li>
+      <li><b>Toshkent davlat texnika universiteti</b> — Iqtisodiyot (2021–2025)</li>
+      <li><b>PDP Academy</b> — Foundation, Java Core, Java Backend</li>
     </ul>
 
-    <!-- Languages -->
+    <!-- LANGUAGES -->
     <h3 class="section-title">Tillar</h3>
     <ul>
-      <li>O‘zbek: Ona tili</li>
-      <li>Ingliz: B1</li>
-      <li>Rus: A2</li>
+      <li>O‘zbek — Ona tili</li>
+      <li>Ingliz — B1</li>
+      <li>Rus — A2</li>
     </ul>
+
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Qadamboyev Diyorbek. Barcha huquqlar himoyalangan.</p>
+    © 2025 Qadamboyev Diyorbek — Barcha huquqlar himoyalangan.
   </footer>
+
 </div>
 
-<!-- JS: html2pdf -->
+<!-- PDF GENERATION -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script>
-  // PDF yuklab olish
-  document.getElementById('downloadPdf').addEventListener('click', function () {
-    const element = document.getElementById('resume-root');
-
-    const opt = {
-      margin:       0.5,                          // dyuym
-      filename:     'Qadamboyev_Diyorbek_Resume.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' },
-      pagebreak:    { mode: ['css', 'legacy'] }   // .section-break kabi klasslar ishlaydi
-    };
-
-    html2pdf().set(opt).from(element).save();
-  });
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  const element = document.getElementById("resume");
+  const opt = {
+    margin: 0.3,
+    filename: "Qadamboyev_Diyorbek_Resume.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+  };
+  html2pdf().set(opt).from(element).save();
+});
 </script>
+
 </body>
 </html>
