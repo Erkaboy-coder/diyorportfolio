@@ -71,10 +71,10 @@ animateParticles();
 
 // ===== TYPING ANIMATION =====
 const titles = [
-  'Java Junior Developer',
-  'Spring Boot o\'rganuvchi',
-  'Backend Dasturchi',
-  'O\'sib borayotgan Developer'
+  'Java Backend Developer',
+  'Spring Boot bilan API yarataman',
+  'PostgreSQL bilan ishlayman',
+  'Jamoada mahsulot quraman'
 ];
 let titleIdx = 0, charIdx = 0, isDeleting = false;
 const typedEl = document.getElementById('typedText');
@@ -90,7 +90,11 @@ function typeEffect() {
   }
   setTimeout(typeEffect, isDeleting ? 40 : 80);
 }
-typeEffect();
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  typedEl.textContent = titles[0];
+} else {
+  typeEffect();
+}
 
 // ===== NAVBAR =====
 const navbar = document.getElementById('navbar');

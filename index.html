@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qadamboyev Diyorbek — Java Backend Developer</title>
-  <meta name="description" content="Qadamboyev Diyorbek — Java Backend Developer portofliyo sayti. Spring Boot, Microservices, RESTful API.">
+  <meta name="description" content="Qadamboyev Diyorbek — Java Backend Developer. Spring Boot, REST API, PostgreSQL va real loyiha tajribasi.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Asosiy qismga o'tish</a>
   <canvas id="particles"></canvas>
 
   <!-- Navigatsiya -->
@@ -29,39 +30,61 @@
   </nav>
 
   <!-- Bosh sahifa -->
+  <main id="main-content">
   <section id="hero" class="hero">
+    <div class="hero-shell">
     <div class="hero-content">
-      <div class="hero-badge"><span class="badge-dot"></span> O'rganishga va rivojlanishga tayyorman</div>
-      <h1 class="hero-name">Qadamboyev <span class="gradient-text">Diyorbek</span></h1>
+      <div class="hero-badge"><span class="badge-dot"></span> Yangi imkoniyatlarga ochiq</div>
+      <p class="hero-kicker">JAVA BACKEND DEVELOPER</p>
+      <h1 class="hero-name">Salom, men <span class="gradient-text">Diyorbekman.</span></h1>
       <div class="hero-title-wrapper">
         <span class="hero-title-prefix">Men</span>
         <span class="typed-text" id="typedText"></span>
         <span class="cursor-blink">|</span>
       </div>
       <p class="hero-description">
-        Java va Spring Boot asosida backend dasturlashni faol o'rganmoqdaman.
-        Real loyihalarda tajriba orttirgan, o'z ustida ishlayotgan Junior dasturchiman.
+        Spring Boot yordamida xavfsiz va kengaytiriladigan backend tizimlar yarataman.
+        Real loyiha, jamoaviy development va production jarayonlari bilan ishlaganman.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Bog'lanish</a>
-        <a href="#projects" class="btn-outline"><i class="fas fa-code"></i> Loyihalarim</a>
+        <a href="#projects" class="btn-primary"><i class="fas fa-arrow-right"></i> Ishlarimni ko'rish</a>
+        <a href="mailto:diyorbekqadamboyev.0208@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> Email yozish</a>
+        <a href="Diyorbek_Qadamboyev_CV.pdf" class="btn-outline btn-pdf" download><i class="fas fa-file-pdf"></i> CV'ni PDF yuklash</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Loyihalar</span>
+          <span class="stat-label">Amaliy loyihalar</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Texnologiyalar</span>
+          <span class="stat-label">Backend texnologiyalar</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number" data-count="1">0</span><span class="stat-plus"></span>
-          <span class="stat-label">Real loyiha tajribasi</span>
+          <span class="stat-label">Kompaniya tajribasi</span>
         </div>
       </div>
+    </div>
+    <aside class="hero-proof" aria-label="Texnik profil">
+      <div class="proof-window">
+        <div class="proof-bar"><span></span><span></span><span></span><small>developer.profile</small></div>
+        <div class="proof-body">
+          <p><span class="code-key">developer</span> Diyorbek Qadamboyev</p>
+          <p><span class="code-key">focus</span> Java · Spring Boot</p>
+          <p><span class="code-key">builds</span> REST API · WebSocket</p>
+          <p><span class="code-key">data</span> PostgreSQL · JPA</p>
+          <p><span class="code-key">workflow</span> GitLab · Docker · CI/CD</p>
+          <div class="proof-status"><i class="fas fa-circle-check"></i> Real product development experience</div>
+        </div>
+      </div>
+      <div class="proof-links">
+        <a href="https://github.com/DiyanQadamboyev" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub profil</a>
+        <a href="https://t.me/Diyorbek_5203" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i> Telegram</a>
+      </div>
+    </aside>
     </div>
     <div class="scroll-indicator">
       <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
@@ -75,10 +98,10 @@
       <h2 class="section-heading animate-on-scroll"><span class="heading-number">01.</span> Men haqimda</h2>
       <div class="about-grid animate-on-scroll">
         <div class="about-text">
-          <p>Men <strong>Java Junior Developer</strong> sifatida dasturlashni faol o'rganib, amaliy loyihalarda o'rgangan bilimlarimni qo'llashga intilaman. <strong>Java Core</strong>, <strong>OOP</strong> va <strong>SOLID</strong> prinsiplari bo'yicha mustahkam asos yaratganman.</p>
+          <p>Men <strong>Java Backend Developer</strong> sifatida biznes vazifalarini tushunarli va ishonchli backend yechimlarga aylantirishga e'tibor beraman. <strong>Java Core</strong>, <strong>OOP</strong> va <strong>SOLID</strong> prinsiplari bo'yicha mustahkam asosga egaman.</p>
           <p><strong>Spring Boot</strong> va <strong>Spring Security</strong> yordamida autentifikatsiya, avtorizatsiya va <strong>RESTful API</strong> lar yaratish bo'yicha amaliy tajribam bor. <strong>PostgreSQL</strong> bilan ishlash, ma'lumotlar bazasi modeling va query yozishni o'rganganman.</p>
-          <p><strong>Git</strong> va <strong>GitLab</strong> orqali jamoaviy ishlash jarayonlarini, merge requestlar va branch strategiyasini o'rgandim. TenzorSoft kompaniyasida real loyihada ishlash tajribasi orttirdim.</p>
-          <p class="about-highlight"><i class="fas fa-quote-left"></i> Yangi texnologiyalarni o'rganishdan zavqlanaman va har kuni o'sib, rivojlanib borishga intilaman.</p>
+          <p><strong>Git</strong> va <strong>GitLab</strong> orqali branch, merge request, code review va CI/CD jarayonlarida ishlaganman. TenzorSoft kompaniyasidagi tajribam menga jamoada mas'uliyat bilan natija yetkazishni o'rgatdi.</p>
+          <p class="about-highlight"><i class="fas fa-bullseye"></i> Maqsadim — kuchli muhandislar jamoasida backend mahsulotlarini rivojlantirish va tez o'sish.</p>
         </div>
         <div class="about-info-cards">
           <div class="info-card">
@@ -91,7 +114,7 @@
           </div>
           <div class="info-card">
             <div class="info-card-icon"><i class="fas fa-code"></i></div>
-            <div><span class="info-label">Yo'nalish</span><span class="info-value">Java Backend (Junior)</span></div>
+            <div><span class="info-label">Yo'nalish</span><span class="info-value">Java Backend Development</span></div>
           </div>
           <div class="info-card">
             <div class="info-card-icon"><i class="fas fa-language"></i></div>
@@ -115,7 +138,7 @@
                 <h3 class="timeline-company">TenzorSoft IT Company</h3>
                 <span class="timeline-role">Backend Developer</span>
               </div>
-              <span class="timeline-date"><i class="far fa-calendar-alt"></i> Real loyiha tajribasi</span>
+              <span class="timeline-date"><i class="far fa-calendar-alt"></i> Commercial experience</span>
             </div>
             <div class="timeline-body">
               <div class="experience-item">
@@ -212,7 +235,7 @@
         <div class="project-card glass-card">
           <div class="project-card-header">
             <div class="project-icon"><i class="fas fa-folder-open"></i></div>
-            <div class="project-links"><a href="https://github.com/DiyanQadamboyev/hospital_admission_project" target="_blank"><i class="fab fa-github"></i></a></div>
+            <div class="project-links"><a href="https://github.com/DiyanQadamboyev/hospital_admission_project" target="_blank" rel="noopener noreferrer" aria-label="Hospital Admission System GitHub repositoriysi"><i class="fab fa-github"></i></a></div>
           </div>
           <h3 class="project-title">Hospital Admission System</h3>
           <p class="project-desc">Bemorlarni qabul qilish jarayonini avtomatlashtiruvchi backend tizimi. Xavfsiz autentifikatsiya va real-time xabarnomalar.</p>
@@ -226,7 +249,7 @@
         <div class="project-card glass-card">
           <div class="project-card-header">
             <div class="project-icon"><i class="fas fa-folder-open"></i></div>
-            <div class="project-links"><a href="#" target="_blank"><i class="fab fa-github"></i></a></div>
+            <span class="project-type">BACKEND API</span>
           </div>
           <h3 class="project-title">E-Commerce Backend</h3>
           <p class="project-desc">Mahsulot, buyurtma va foydalanuvchilar boshqaruvi uchun kengaytiriladigan RESTful API.</p>
@@ -240,7 +263,7 @@
         <div class="project-card glass-card">
           <div class="project-card-header">
             <div class="project-icon"><i class="fas fa-folder-open"></i></div>
-            <div class="project-links"><a href="#" target="_blank"><i class="fab fa-github"></i></a></div>
+            <span class="project-type">AUTOMATION</span>
           </div>
           <h3 class="project-title">Food Ordering Bot</h3>
           <p class="project-desc">Ovqat buyurtmalarini avtomatlashtirish uchun yaratilgan bot. CRUD amallari, menyu boshqaruvi mavjud.</p>
@@ -254,7 +277,7 @@
         <div class="project-card glass-card">
           <div class="project-card-header">
             <div class="project-icon"><i class="fas fa-folder-open"></i></div>
-            <div class="project-links"><a href="#" target="_blank"><i class="fab fa-github"></i></a></div>
+            <span class="project-type">JAVA CORE</span>
           </div>
           <h3 class="project-title">JsonBot</h3>
           <p class="project-desc">JSON formatidagi ma'lumotlar bilan ishlaydigan bot. Yaratish, o'qish, yangilash va o'chirish funksiyalari.</p>
@@ -268,7 +291,7 @@
         <div class="project-card glass-card">
           <div class="project-card-header">
             <div class="project-icon"><i class="fas fa-folder-open"></i></div>
-            <div class="project-links"><a href="#" target="_blank"><i class="fab fa-github"></i></a></div>
+            <span class="project-type">FINTECH</span>
           </div>
           <h3 class="project-title">StudyCenterApp</h3>
           <p class="project-desc">O'quv markazi uchun to'lovlarni boshqarish tizimi. Balans, to'lov tarixi va o'quvchilarni boshqarish.</p>
@@ -313,7 +336,7 @@
     <div class="container">
       <h2 class="section-heading animate-on-scroll"><span class="heading-number">06.</span> Bog'lanish</h2>
       <div class="contact-wrapper animate-on-scroll">
-        <p class="contact-description">Hozirda yangi imkoniyatlarni qidirmoqdaman. Savolingiz, loyiha g'oyangiz bo'lsa yoki shunchaki salomlashmoqchi bo'lsangiz — men bilan bog'laning!</p>
+        <p class="contact-description">Backend jamoasiga qo'shilish va real mahsulotlar ustida ishlashga tayyorman. Vakansiya yoki hamkorlik taklifingiz bo'lsa — bog'laning.</p>
         <div class="contact-cards">
           <a href="mailto:diyorbekqadamboyev.0208@gmail.com" class="contact-card glass-card" id="contact-email">
             <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
@@ -325,12 +348,12 @@
             <span class="contact-card-label">Telefon</span>
             <span class="contact-card-value">+998 93 053 52 03</span>
           </a>
-          <a href="https://t.me/Diyorbek_5203" target="_blank" class="contact-card glass-card" id="contact-telegram">
+          <a href="https://t.me/Diyorbek_5203" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="contact-telegram">
             <div class="contact-card-icon"><i class="fab fa-telegram"></i></div>
             <span class="contact-card-label">Telegram</span>
             <span class="contact-card-value">@Diyorbek_5203</span>
           </a>
-          <a href="https://github.com/DiyanQadamboyev" target="_blank" class="contact-card glass-card" id="contact-github">
+          <a href="https://github.com/DiyanQadamboyev" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="contact-github">
             <div class="contact-card-icon"><i class="fab fa-github"></i></div>
             <span class="contact-card-label">GitHub</span>
             <span class="contact-card-value">DiyanQadamboyev</span>
@@ -341,13 +364,15 @@
     </div>
   </section>
 
+  </main>
+
   <footer>
     <div class="footer-content">
       <a href="#hero" class="footer-logo"><span class="logo-bracket">&lt;</span>DQ<span class="logo-bracket"> /&gt;</span></a>
       <p>Qadamboyev Diyorbek tomonidan yaratildi</p>
       <div class="footer-social">
-        <a href="https://github.com/DiyanQadamboyev" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/Diyorbek_5203" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/DiyanQadamboyev" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/Diyorbek_5203" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
         <a href="mailto:diyorbekqadamboyev.0208@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
       <span class="footer-copy">© 2026 Barcha huquqlar himoyalangan.</span>
